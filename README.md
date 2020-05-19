@@ -12,7 +12,8 @@ Poly Fluid Sizing is a [stylus](https://stylus-lang.com/) mixin that gives you p
 
 ```stylus
 // Import mixin
-@require 'poly-fluid-sizing'
+@require 'poly-fluid-sizing-stylus'
+// Depending on your setup, this might also be something like: `@import '~poly-fluid-sizing-stylus'`
 
 h1
   poly-fluid-sizing('font-size', {'30rem': 2rem, '50rem': 3rem, '60rem': 4rem})
