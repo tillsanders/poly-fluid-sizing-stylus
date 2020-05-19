@@ -1,6 +1,6 @@
 {
   "name": "poly-fluid-sizing-stylus",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Stylus mixin for linear interpolation between multiple values across multiple breakpoints using CSS calc() and viewport units. Adaption of the SASS mixin by Jakobud/poly-fluid-sizing.",
   "main": "src/poly-fluid-sizing.styl",
   "scripts": {
