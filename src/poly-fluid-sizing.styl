@@ -1,0 +1,36 @@
+@require 'linear-interpolation'
+
+poly-fluid-sizing(property, markers)
+  unless property is a 'string'
+    error('
+      Expected `property` parameter of the poly-fluid-sizing(property, markers) mixin to be of
+      type String.
+    ')
+
+  unless markers is a 'object' and length(markers) > 1
+    error('
+      The `markers` parameter of the poly-fluid-sizing(property, markers) mixin requires a
+      hash value with at least two key-value pairs
+    ')
+
+  breakpoints = keys(markers)
+
+  // Minimum size
+  first = breakpoints[0]
+  {property}: markers[first]
+
+  // Interpolated size through breakpoints
+  for breakpoint, index in breakpoints
+    @media (min-width: unquote(breakpoint))
+      value1 = markers[breakpoints[index]]
+      value2 = markers[breakpoints[index + 1]]
+
+      // If values are not equal, perform linear interpolation
+      if value1 is not value2 and value2 is not null
+        interpolation = {}
+        interpolation[breakpoints[index]] = value1
+        interpolation[breakpoints[index + 1]] = value2
+        result = unquote(linear-interpolation(interpolation))
+        {property}: result
+      else
+        {property}: value1

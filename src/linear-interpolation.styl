@@ -1,0 +1,23 @@
+linear-interpolation(map)
+  keys = keys(map)
+
+  unless map is a 'object' and length(keys) > 1
+    error('
+      The `map` parameter of the linear-interpolation(map) function requires a hash value with at
+      least two ke-value pairs
+    ')
+
+  // The slope
+  m = (map[keys[1]] - map[keys[0]]) / (convert(keys[1]) - keys[0])
+
+  // The y-intercept
+  b = map[keys[0]] - m * keys[0]
+
+  // Determine if the sign should be positive or negative
+  sign = '+'
+  if b < 0
+    sign = '-'
+    b = abs(b)
+
+  vw = unit(m * 100, vw)
+  return 'calc(' + vw + ' ' + sign + ' ' + b + ')'
