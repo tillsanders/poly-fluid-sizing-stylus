@@ -8,6 +8,8 @@
 
 Poly Fluid Sizing is a [stylus](https://stylus-lang.com/) mixin that gives you precise control over CSS measurements, like the `font-size` across multiple breakpoints. It allows you to set the desired scale for every breakpoint and applies linear interpolation between them using `calc()`. It uses some ~~basic~~ dark math behind the scenes. You don't need to know the math or understand it to use this mixin.
 
+[**Demo**](https://tillsanders.github.io/poly-fluid-sizing-stylus/)
+
 ```stylus
 // Import mixin
 @require 'poly-fluid-sizing'
