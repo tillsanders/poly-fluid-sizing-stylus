@@ -1,5 +1,9 @@
 # Poly Fluid Sizing for Stylus
 
+![License](https://img.shields.io/npm/l/poly-fluid-sizing-stylus)
+![Version](https://img.shields.io/npm/v/poly-fluid-sizing-stylus)
+![Downloads](https://img.shields.io/npm/dy/poly-fluid-sizing-stylus)
+
 > Stylus mixin for linear interpolation between multiple values across multiple breakpoints using
 > CSS calc() and viewport units. Adaption of the SASS mixin by
 > [Jakobud/poly-fluid-sizing](https://github.com/Jakobud/poly-fluid-sizing).
